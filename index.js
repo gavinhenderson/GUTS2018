@@ -7,6 +7,7 @@ const io = require("socket.io")(http);
 // Config
 const port = process.env.PORT || 8080;
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 // Root
 app.get("/", (req, res) => {
