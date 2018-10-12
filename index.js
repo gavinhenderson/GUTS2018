@@ -1,4 +1,3 @@
-import { isBoolean } from 'util';
 // Dependencies
 const express = require('express');
 const app = express();
