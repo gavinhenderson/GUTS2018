@@ -120,4 +120,17 @@
     }
 
   }
+
+  function takeNextCall() {
+      $.ajax('/connect/' + '<%- user.clientName %>')
+        .done(function (text) {
+          console.log(text);
+          if(text === 'Empty Queue') {
+            alert('Queue is currently empty');
+          }
+        })
+        .fail(function () {
+          alert('Could not connect!');
+        });
+    }
 </script>
