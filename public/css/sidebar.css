@@ -1,79 +1,75 @@
 /* Sidebar */
 html {
-	height: 100%;
+  height: 100%;
 }
 
 body {
-	margin: 0;
-	height: 100%;
-}
-
-#container {
-	height: 100%;
+  margin: 0;
+  height: 100%;
 }
 
 #sidebar {
-	background-color: #2980b9;
-	display: inline-block;
-	vertical-align: top;
-	height: 100%;
-	width: 18%;
-	overflow: auto;
-	
+  background-color: #2980b9;
+  display: inline-block;
+  vertical-align: top;
+  height: 100vh;
+  width: 18%;
+  overflow: auto;
+  min-width: 200px;
 }
 
 #content {
-	background-color: #f8f8f8;
-	display: inline-block;
-	vertical-align: top;
-	height: 100%;
-	width: 82%;
-	overflow: auto;
+  background-color: #f8f8f8;
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 82%;
+  overflow: auto;
 }
 
 /* Profile Card */
 .card {
-	padding: 10px;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	background-color: #34495e;
-	max-width: 150px;
-	margin: auto;
-	margin-top: 10px;
-	text-align: center;
-	font-family: Georgia;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #34495e;
+  max-width: 150px;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  font-family: Georgia;
 }
 
 img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .title {
-    color: black;
-	font-size: 18px;
-
+  color: black;
+  font-size: 18px;
 }
 
 button {
-	border: none;
-	border-radius: 8px;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
 }
 
 a {
-    text-decoration: none;
-    font-size: 22px;
-	color: black;
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
 }
 
-button:hover, a:hover {
-    opacity: 0.7;
+button:hover,
+a:hover {
+  opacity: 0.7;
 }
