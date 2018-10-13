@@ -11,7 +11,7 @@ class MessageList {
     this.caller = caller;
   }
 
-  clear() {
+  clearList() {
     this.listElement.innerHTML = "";
   }
 
