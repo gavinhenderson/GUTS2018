@@ -16,7 +16,7 @@ class MessageList {
   }
 
   showGif() {
-    this.listElement.innerHTML = '<img src="/images/phoney.gif">';
+    this.listElement.innerHTML = '<img class="gif" src="/images/phoney.gif">';
   }
 
   addMessage(personIdentifier, message) {
