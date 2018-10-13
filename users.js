@@ -23,4 +23,4 @@ users.forEach((user) => {
   user.id = uuidv4();
 });
 
-module.exports = { users };
+module.exports = users;

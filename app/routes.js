@@ -1,4 +1,4 @@
-module.exports = (app) => {
+module.exports = (app, passport) => {
   app.get("/", (req, res) => {
     if (!req.user) {
       res.redirect("/login");
@@ -13,10 +13,14 @@ module.exports = (app) => {
   });
 
   app.post("/login", (req, res) => {
-    console.log(req.body);
     passport.authenticate("local", {
       successRedirect: "/",
       failureRedirect: "/",
     })(req, res);
+  });
+
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/login");
   });
 };
