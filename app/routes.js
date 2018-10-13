@@ -57,7 +57,7 @@ module.exports = (app, passport) => {
     res.redirect("/login");
   });
 
-  app.get('/token', (req, res) => {
+  app.get('/token/:operator', (req, res) => {
     // put your Twilio API credentials here
   
     // put your Twilio Application Sid here
@@ -69,9 +69,9 @@ module.exports = (app, passport) => {
       authToken: authToken,
     });
     capability.addScope(
-      new ClientCapability.OutgoingClientScope({ applicationSid: appSid, clientName: 'adam' })
+      new ClientCapability.OutgoingClientScope({ applicationSid: appSid, clientName: req.params.operator })
     );
-    capability.addScope(new ClientCapability.IncomingClientScope('adam'));
+    capability.addScope(new ClientCapability.IncomingClientScope(req.params.operator));
     const token = capability.toJwt();
 
     res.set('Content-Type', 'application/jwt');
@@ -119,6 +119,8 @@ module.exports = (app, passport) => {
 
   app.post('/music', (req, res) => {
     
+    console.log(req.body);
+
     // Use the Twilio Node.js SDK to build an XML response
     const twiml = new VoiceResponse();
     twiml.play({
