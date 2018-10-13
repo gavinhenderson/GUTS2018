@@ -2,12 +2,14 @@
 
 <head>
 
-  <% include partials/sidebar.ejs %>
   <link rel="stylesheet" type="text/css" href="/css/index.css">
   <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
 </head>
 
 <body>
+  <!-- Sidebar partial -->
+  <% include partials/sidebar.ejs %>
+
   hello,
   <%= user.name %>!
   <div class="message-container">
