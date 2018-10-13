@@ -41,15 +41,22 @@ body {
 	margin: auto;
 	margin-top: 10px;
 	text-align: center;
+	font-family: Georgia;
+}
+
+img {
+    border-radius: 50%;
 }
 
 .title {
     color: black;
-    font-size: 18px;
+	font-size: 18px;
+
 }
 
 button {
-    border: none;
+	border: none;
+	border-radius: 8px;
     outline: 0;
     display: inline-block;
     padding: 8px;
@@ -64,7 +71,7 @@ button {
 a {
     text-decoration: none;
     font-size: 22px;
-    color: black;
+	color: black;
 }
 
 button:hover, a:hover {
