@@ -8,12 +8,12 @@
 
 <body>
   <!-- Sidebar partial -->
-  <% include partials/sidebar.ejs %>
+  <div class="page-container">
+    <% include partials/sidebar.ejs %>
 
-  hello,
-  <%= user.name %>!
-  <div class="message-container">
-    <% include partials/message-panel.ejs %>
+    <div class="message-container">
+      <% include partials/message-panel.ejs %>
+    </div>
   </div>
 </body>
 
