@@ -35,7 +35,7 @@ body {
   margin: 10px;
   margin-top: 10px;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -73,32 +73,31 @@ a:hover {
 }
 
 /* Operator Card */
-li{
-	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
-  }
-
-#opImage{
-	margin-right: 10px;
-	vertical-align: middle;
-	height: 45px;
-	width: 45px;
+li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
-#opText{
-	margin-left: 10px;
-	display: inline-block;
+#opImage {
+  margin-right: 10px;
+  vertical-align: middle;
+  height: 45px;
+  width: 45px;
 }
 
-ul{
-	margin: 0px;
-	padding: 0px;
-	text-align: left;
+#opText {
+  margin-left: 10px;
+  display: inline-block;
 }
 
-h3{
-	font-family: 'Courier New', Courier, monospace;
-	text-align: center;
+ul {
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
 }
 
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
