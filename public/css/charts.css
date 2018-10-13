@@ -8,11 +8,13 @@
   margin-top: 10px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
+  width: 400px;
 }
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* Makes it a mandatory 3 in each row before moving to the next */
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
 
