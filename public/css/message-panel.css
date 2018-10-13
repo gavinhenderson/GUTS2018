@@ -1,3 +1,46 @@
 .message-container {
+  font-family: Arial, Helvetica, sans-serif;
   width: 100%;
+  margin: 0 30px;
+}
+
+.caller-message-container,
+.operator-message-container {
+  width: 80%;
+  padding: 20px 0;
+}
+
+.caller-message-container {
+  float: right;
+}
+
+.operator-message-container {
+  float: left;
+}
+
+.caller-message-name {
+  text-align: right;
+}
+
+.caller-message-name,
+.operator-message-name {
+  margin: 8px;
+}
+
+.caller-message-content,
+.operator-message-content {
+  display: block;
+  width: 100%;
+  background-color: #9b9b9b;
+  color: white;
+  border-radius: 32px;
+}
+
+.operator-message-content {
+  background-color: #67a5ed;
+}
+
+.message-text {
+  padding: 15px;
+  margin: 0;
 }
