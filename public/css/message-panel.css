@@ -65,16 +65,43 @@
 }
 
 .timer {
-  height: 40px;
+  padding: 8px;
   background-color: #7db93a;
   color: white;
   font-size: 18px;
   text-align: center;
-  padding-top: 25px;
 }
 
 .message-panel {
   width: 100%;
   display: flex;
   flex-direction: column
+}
+
+.hang-up-button:hover,
+.hold-button:hover {
+  opacity: 1;
+  text-decoration: underline;
+
+}
+
+.hang-up-button,
+.hold-button {
+  border-radius: 0;
+}
+
+.hang-up-button {
+  background-color: #e84118;
+}
+
+.hang-up-button:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4);
+}
+
+.hold-button {
+  background-color: #40739e;
+}
+
+.hold-button:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4);
 }
