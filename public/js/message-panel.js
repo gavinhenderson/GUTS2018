@@ -6,11 +6,13 @@ class MessagePanel {
   }
 
   startCall() {
-    const takeNextCall = document.querySelector('.take-next-call-button');
-    const endCall = document.querySelector('.hang-up-button');
+    this.messageList.clearList();
 
-    endCall.classList.remove('hide-button');
-    takeNextCall.classList.add('hide-button');
+    const takeNextCall = document.querySelector(".take-next-call-button");
+    const endCall = document.querySelector(".hang-up-button");
+
+    endCall.classList.remove("hide-button");
+    takeNextCall.classList.add("hide-button");
 
     this.timer.start();
   }
@@ -18,13 +20,14 @@ class MessagePanel {
   endCall() {
     this.timer.stop();
     this.timer.reset();
+    this.messageList.clearList();
     this.messageList.showGif();
-    
-    const takeNextCall = document.querySelector('.take-next-call-button');
-    const endCall = document.querySelector('.hang-up-button');
 
-    takeNextCall.classList.remove('hide-button');
-    endCall.classList.add('hide-button');
+    const takeNextCall = document.querySelector(".take-next-call-button");
+    const endCall = document.querySelector(".hang-up-button");
+
+    takeNextCall.classList.remove("hide-button");
+    endCall.classList.add("hide-button");
   }
 
   setOperator(operator) {
