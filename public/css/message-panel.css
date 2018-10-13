@@ -53,7 +53,6 @@
 
 .message {
   align-self: flex-end;
-
 }
 
 .message-container {
@@ -75,14 +74,13 @@
 .message-panel {
   width: 100%;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
 .hang-up-button:hover,
 .hold-button:hover {
   opacity: 1;
   text-decoration: underline;
-
 }
 
 .hang-up-button,
@@ -92,6 +90,7 @@
 
 .hang-up-button {
   background-color: #e84118;
+  color: white;
 }
 
 .hang-up-button:hover {
