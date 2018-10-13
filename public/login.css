@@ -24,7 +24,7 @@
 
 .login-box {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #d2d2d2;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.75);
     opacity: 0.85;
@@ -59,8 +59,13 @@ input[type=text]:focus {
 }
 
 .submit-button {
-    border-radius: 4px;
-    height: 45px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #1a73e8;
+    color: white;
+    border: 0;
+    width: 100px;
 }
 
 .logo {
@@ -86,4 +91,5 @@ input[type=text]:focus {
 .phone-input {
     flex-grow: 1;
     margin-right: 5px;
+    font-size: 16px;
 }
