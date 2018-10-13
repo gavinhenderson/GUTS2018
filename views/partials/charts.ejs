@@ -6,47 +6,74 @@
   <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
   <link rel="stylesheet" type="text/css" href="/css/charts.css">
 
-<!-- Fake data using CanvasJS -->
+  <!-- Fake data using CanvasJS -->
 
-<script>
+  <script>
     window.onload = function () {
-    
-    var chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      theme: "light2",
-      title:{
-        text: "Simple Line Chart"
-      },
-      axisX:{
-	  	  title: "Seconds",
-	    },
-      axisY:{
-        title: "Sentiment",
-        includeZero: true
-      },
-      data: [{        
-        type: "line",       
-        dataPoints: [
-          { y: 45.0 },
-          { y: 41.4},
-          { y: 90.0, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
-          { y: 46.0 },
-          { y: 45.0 },
-          { y: 50.0 },
-          { y: 48.0 },
-          { y: 48.0 },
-          { y: 16.0 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
-          { y: 50.0 },
-          { y: 48.0 }
-        ]
-      }]
-    });
-    chart.render();
-    
-    }
-    </script>
 
-<!--  -->
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+          text: "Simple Line Chart"
+        },
+        axisX: {
+          title: "Seconds",
+        },
+        axisY: {
+          title: "Sentiment",
+          includeZero: true
+        },
+        data: [{
+          type: "line",
+          dataPoints: [{
+              y: 45.0
+            },
+            {
+              y: 41.4
+            },
+            {
+              y: 90.0,
+              indexLabel: "highest",
+              markerColor: "red",
+              markerType: "triangle"
+            },
+            {
+              y: 46.0
+            },
+            {
+              y: 45.0
+            },
+            {
+              y: 50.0
+            },
+            {
+              y: 48.0
+            },
+            {
+              y: 48.0
+            },
+            {
+              y: 16.0,
+              indexLabel: "lowest",
+              markerColor: "DarkSlateGrey",
+              markerType: "cross"
+            },
+            {
+              y: 50.0
+            },
+            {
+              y: 48.0
+            }
+          ]
+        }]
+      });
+      chart.render();
+
+    }
+  </script>
+
+  <!--  -->
 
 </head>
 
@@ -56,25 +83,24 @@
 
     <div class="message-container">
 
-    <h1>Real Time Analytics</h1>
+      <h1>Real Time Analytics</h1>
 
-    <div class="wrapper">
+      <div class="wrapper">
         <div class="dataCards">
-            <h4>Concurrent Calls</h4>
-            <p><button class="charts-button" onclick="window.location.href='logout'">Logout</button></p>
+          <h4>Concurrent Calls</h4>
+          <p><button class="charts-button" onclick="window.location.href='logout'">Logout</button></p>
         </div>
         <div class="dataCards">
-            <h4>Call Duration</h4>
-            <p><button class="charts-button" onclick="window.location.href='logout'">Logout</button></p>
+          <h4>Call Duration</h4>
+          <p><button class="charts-button" onclick="window.location.href='logout'">Logout</button></p>
         </div>
         <div class="dataCards">
-            <h4>Call Sentiment</h4>
-            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+          <h4>Call Sentiment</h4>
+          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         </div>
-    </div>
+      </div>
 
     </div>
   </div>
 </body>
-
