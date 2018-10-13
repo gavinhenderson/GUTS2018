@@ -28,8 +28,6 @@
       conn = connection;
     });
 
-
-
     /* Call a customer from a support ticket */
     function callCustomer(phoneNumber) {
       var params = {
@@ -52,7 +50,7 @@
       // accept the incoming connection and start two-way audio
       conn.accept();
 
-      transcribe(conn.parameters.From);
+      transcribe(conn);
     });
 
     function takeNextCall() {
@@ -68,7 +66,8 @@
         });
     }
 
-    function transcribe(phoneNumber) {
+    function transcribe(conn) {
+      const phoneNumber = conn.parameters.From;
       fetch('/watson/credentials')
         .then(function (response) {
           return response.text();
