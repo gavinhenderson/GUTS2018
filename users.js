@@ -1,7 +1,6 @@
 const uuidv4 = require("uuid/v4");
 
-const users = [
-  {
+const users = [{
     number: "07597347312",
     name: "Mitchell McJannett",
     title: "Forward Operator",
@@ -14,7 +13,7 @@ const users = [
   {
     name: "Jay Bennett",
     number: "07754611783",
-    title: "Middle Operator",
+    title: "Head Operator",
   },
   {
     name: "Dean Beggs",
