@@ -1,10 +1,11 @@
 <script>
   window.onload = () => {
-    const messageList = new MessageList("messages");
-    messageList.setCaller({
+    const messagePanel = new MessagePanel();
+    
+    messagePanel.setCaller({
       name: "Caller"
     });
-    messageList.setOperator({
+    messagePanel.setOperator({
       name: "Operator"
     });
 
@@ -84,7 +85,7 @@
           stream.setEncoding('utf8'); // get text instead of Buffers for on data events
 
           stream.on('data', function (data) {
-            messageList.addMessage('Caller', data);
+            messagePanel.addMessage('Caller', data);
           });
 
           stream.on('message', function (data) {
@@ -104,7 +105,7 @@
           stream2.setEncoding('utf8'); // get text instead of Buffers for on data events
 
           stream2.on('data', function (data) {
-            messageList.addMessage('Operator', data);
+            messagePanel.addMessage('Operator', data);
           });
 
           stream2.on('message', function (data) {
