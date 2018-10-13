@@ -1,4 +1,4 @@
-
+/* Sidebar */
 html {
 	height: 100%;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 .title {
-    color: grey;
+    color: black;
     font-size: 18px;
 }
 
