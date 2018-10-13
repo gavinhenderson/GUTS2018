@@ -7,11 +7,14 @@
 
 <body>
   <div class="background-image"></div>
-  <form method="POST" action="/login">
-    <input name="username" type="text">
-    <input name="password" type="text" value="password" hidden>
-    <button type="submit">login</button>
-  </form>
+  <div class="login-box">
+    <p>Enter your login number below:</p>
+    <form method="POST" action="/login">
+      <input name="username" type="text">
+      <input name="password" type="text" value="password" hidden>
+      <button type="submit">login</button>
+    </form>
+  </div>
 </body>
 
 </html>
