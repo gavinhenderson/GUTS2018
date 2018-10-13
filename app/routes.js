@@ -9,6 +9,7 @@ module.exports = (app, passport) => {
   });
 
   app.get("/login", (req, res) => {
+    if (req.user) res.redirect("/");
     res.render("login");
   });
 
