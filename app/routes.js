@@ -26,7 +26,7 @@ module.exports = (app, passport) => {
   
   app.get('/watson/credentials', (req, res, next) => {
     watsonTokenManager.getToken((err, token) => {
-      if (err) {
+    if (err) {
         next(err);
       } else {
         let credentials = {
@@ -135,22 +135,33 @@ module.exports = (app, passport) => {
 
   });
 
-  app.get('/connect', (req, res) => {
+  app.get('/connect/:operator', (req, res) => {
     
     var twilio = require('twilio');
     var client = twilio(accountSid, authToken);
 
-    client.calls.create({
-      from: '+441412806922',
-      to: 'client:adam',
-      url: 'https://handler.twilio.com/twiml/EH09e689e9bca54cef2725c8e3f0750edf'
-      }).then(function () {
-        console.log('Your phone should be ringing');
-      }).catch(function (err) {
-        console.error(err.message);
-      });
+    client.queues('QUa43f0558674af49083e1afeb88a6efa1')
+     .fetch()
+     .then(queue => {
+       
+      if(queue.currentSize > 0) {
+        
+        client.calls.create({
+          from: '+441412806922',
+          to: 'client:' + req.params.operator,
+          url: 'https://handler.twilio.com/twiml/EH09e689e9bca54cef2725c8e3f0750edf'
+          }).then(function () {
+            console.log('Your phone should be ringing');
+          }).catch(function (err) {
+            console.error(err.message);
+          });
+          res.send('Connected');
+      } else {
+        res.send('Empty Queue');
+      }
 
-      res.send();
+     })
+     .done();
 
   });
 
