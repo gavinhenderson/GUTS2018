@@ -7,13 +7,21 @@
 
 <body>
   <div class="background-image"></div>
+
   <div class="login-box">
-    <p>Enter your login number below:</p>
-    <form method="POST" action="/login">
-      <input name="username" type="text">
-      <input name="password" type="text" value="password" hidden>
-      <button type="submit">login</button>
-    </form>
+    <div class="logo-container">
+      <img class="logo" src="/images/phoney.png" />
+    </div>
+    <div class="input-container">
+      <p class="label">Phone:</p>
+      <form method="POST" action="/login">
+        <div class="form-container">
+          <input class="phone-input" id="username" name="username" type="text" placeholder="e.g. 071356489375">
+          <input name="password" type="text" value="password" hidden>
+          <button class="submit-button" type="submit">login</button>
+        </div>
+      </form>
+    </div>
   </div>
 </body>
 
