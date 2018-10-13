@@ -1,18 +1,22 @@
 <div id="sidebar">
   <!-- Sidebar contents -->
-  <div class="card">
-      <img src="/images/<%=user.name %>.jpg"  alt="John" style="width:100%">
-      <h1><%= user.name %></h1>
-      <p class="title"><%= user.title %></p>
-      <p><%= user.number %></p>
-      <p><button>Settings</button></p>
-      <p><button onclick="window.location.href='logout'">Logout</button></p>
-      </div>
+  	<div class="sidebar-header">
+      <img src="/images/<%=user.name %>.jpg"  alt="John" class="sidebar-profile">
+	  <h1><%= user.name %></h1>
+	  <div class="sidebar-profile-info">
+		<p class="title"><%= user.title %></p>
+		<p><%= user.number %></p>
+	  </div>
+	  <div class="sidebar-profile-action">
+		<p><button>Settings</button></p>
+		<p><button onclick="window.location.href='logout'">Logout</button></p>
+	  </div>
+	</div>
   <!-- <div id="sidebar-content"></div> -->
 
-  <hr>
-  <h3>Operators</h3>
   <!-- Sidebar contents -->
+  <div class="sidebar-content">
+		<h3>Operators</h3>
   		<div class="card">
 			<ul>
 				<li><img id="opImage" src="/images/op.jpg" ><p id="opText">First list item</p></li>
@@ -33,6 +37,9 @@
 				<li><img id="opImage" src="/images/op.jpg" ><p id="opText">Fourth list item</p></li>
 			</ul>
 		</div>
+	</div>
 
-	<div id="sidebar-content"></div>
+	<div class="sidebar-footer">
+		<img class="sidebar-logo" src="images/phoney.png" style="opacity: 0.16"></img>
+	</div>
 </div>
