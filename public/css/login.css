@@ -48,15 +48,6 @@
     margin: 10px 0;
 }
 
-.login-box input {
-    position: relative;
-    width: 50%;
-    padding: 12px 20px;
-}
-
-input[type=text]:focus {
-    border: 3px solid #555;
-}
 
 .submit-button {
     border-radius: 8px;
@@ -66,6 +57,7 @@ input[type=text]:focus {
     color: white;
     border: 0;
     width: 100px;
+    margin-left: 5px;
 }
 
 .logo {
@@ -89,7 +81,15 @@ input[type=text]:focus {
 }
 
 .phone-input {
+    margin: 3px;
+    position: relative;
+    width: 50%;
+    padding: 12px 20px;
     flex-grow: 1;
-    margin-right: 5px;
     font-size: 16px;
+}
+
+.phone-input:focus {
+    margin: 0 10px;
+    border: 3px solid #555;
 }
