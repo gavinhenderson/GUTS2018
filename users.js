@@ -19,7 +19,7 @@ const users = [
   {
     name: "Dean Beggs",
     number: "4",
-    title: "Operator",
+    title: "The Operator",
   },
 ];
 
