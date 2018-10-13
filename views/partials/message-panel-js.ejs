@@ -14,7 +14,6 @@
     $(function () {
       $.ajax(endpoint)
         .done(function (token) {
-          console.log('Got a token: ', token);
 
           Twilio.Device.setup(token);
         })
@@ -38,12 +37,10 @@
     }
 
     Twilio.Device.ready(function (device) {
-      console.log('Ready');
     });
 
     Twilio.Device.error(function (error) {
       console.log('Error: ' + error.message);
-      console.log(error);
     });
 
     Twilio.Device.incoming(function (conn) {
@@ -88,11 +85,9 @@
           });
 
           stream.on('message', function (data) {
-            console.log(data);
           });
 
           stream.on('error', function (err) {
-            console.log(err);
           });
 
           var stream2 = WatsonSpeech.SpeechToText.recognizeMicrophone({
@@ -108,11 +103,9 @@
           });
 
           stream2.on('message', function (data) {
-            console.log(data);
           });
 
           stream2.on('error', function (err) {
-            console.log(err);
           });
 
         }).catch(function (error) {
