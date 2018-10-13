@@ -17,10 +17,12 @@ class Timer {
 
       this.counter++;
     }, 1000);
+    document.querySelector(".timer").classList.remove("timer-disabled");
   }
 
   stop() {
     clearInterval(this.interval);
+    document.querySelector(".timer").classList.add("timer-disabled");
   }
 
   reset() {

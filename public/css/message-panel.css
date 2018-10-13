@@ -71,6 +71,10 @@
   text-align: center;
 }
 
+.timer-disabled {
+  background-color: gray;
+}
+
 .message-panel {
   width: 100%;
   display: flex;
@@ -115,7 +119,6 @@
   top: 20%;
   left: 50%;
   margin-left: -150px;
-
 }
 
 .hide-button {
