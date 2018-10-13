@@ -1,12 +1,13 @@
 <script src="/js/messages.js"></script>
 <script>
-  document.onload = () => {
+  window.onload = () => {
+    console.log("test");
     const messageList = new MessageList("messages");
     messageList.setCaller({
-      name: "Customer"
+      name: "Caller"
     });
     messageList.setOperator({
-      name: "Kathleen"
+      name: "Operator"
     });
     messageList.addMessage("caller", "Hey");
     messageList.addMessage("operator", "yo dawg");
