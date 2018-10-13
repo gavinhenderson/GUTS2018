@@ -73,3 +73,18 @@ button:hover,
 a:hover {
   opacity: 0.7;
 }
+
+/* Operator Card */
+li{
+	list-style-type: none;
+  }
+
+#op{
+	vertical-align: middle;
+	height: 20px;
+	width: 20px;
+}
+
+#opText{
+	display: inline-block;
+}
