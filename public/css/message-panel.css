@@ -88,6 +88,11 @@
   border-radius: 0;
 }
 
+.take-next-call-button {
+  background-color: #1a73e8;
+  color: white;
+}
+
 .hang-up-button {
   background-color: #e84118;
   color: white;

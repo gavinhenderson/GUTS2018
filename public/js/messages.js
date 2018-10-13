@@ -15,6 +15,10 @@ class MessageList {
     this.listElement.innerHTML = "";
   }
 
+  showGif() {
+    this.listElement.innerHTML = '<img src="/images/phoney.gif">';
+  }
+
   addMessage(personIdentifier, message) {
     const person = personIdentifier === "caller" ? this.caller : this.operator;
     const newMessage = document.createElement("div");

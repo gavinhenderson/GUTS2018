@@ -87,7 +87,7 @@ body {
   text-align: center;
 }
 
-img {
+.img-round {
   border-radius: 50%;
 }
 
