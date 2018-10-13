@@ -61,4 +61,20 @@
   flex-direction: row;
   align-items: flex-end;
   height: 100%;
+  width: 100%;
+}
+
+.timer {
+  height: 40px;
+  background-color: #7db93a;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.message-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column
 }

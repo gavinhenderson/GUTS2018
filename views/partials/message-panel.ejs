@@ -1,6 +1,9 @@
 <script src="/js/messages.js"></script>
+<script src="/js/timer.js"></script>
 <script>
   window.onload = () => {
+    const timer = new Timer("time-left");
+    timer.start();
     const messageList = new MessageList("messages");
     messageList.setCaller({
       name: "Caller"
@@ -21,8 +24,11 @@
 
   }
 </script>
-<div class="message-container">
-  <div class="message-sticker">
-    <div class="messages"></div>
+<div class="message-panel">
+  <div class="message-container">
+    <div class="message-sticker">
+      <div class="messages"></div>
+    </div>
   </div>
+  <div class="timer">Call in progress: <span class="time-left">00:00</span></div>
 </div>
