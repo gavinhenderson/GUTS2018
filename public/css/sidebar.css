@@ -132,15 +132,27 @@ li{
 	padding: 0px;
   }
 
-#opImage{
+.opImage{
 	margin-right: 10px;
 	vertical-align: middle;
 	height: 30px;
   width: 30px;
 }
 
-#opText {
-  margin-left: 10px;
+.active {
+  border: solid 2px #7ED321;
+}
+
+.busy {
+  border: solid 2px #D0021B;
+}
+
+.offline {
+  border: solid 2px #979797;
+}
+
+.opText {
+  margin-left: 5px;
   display: inline-block;
 }
 
