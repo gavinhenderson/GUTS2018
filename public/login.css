@@ -21,3 +21,23 @@
     opacity: 0.8;
     background-color: gray;
 }
+
+.login-box {
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.6); 
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .login-box input {
+      position: relative;
+      width: 50%;
+  }
