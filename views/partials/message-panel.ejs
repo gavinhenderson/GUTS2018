@@ -1,11 +1,19 @@
-<html>
+<script src="/js/messages.js"></script>
+<script>
+  document.onload = () => {
+    const messageList = new MessageList("messages");
+    messageList.setCaller({
+      name: "Customer"
+    });
+    messageList.setOperator({
+      name: "Kathleen"
+    });
+    messageList.addMessage("caller", "Hey");
+    messageList.addMessage("operator", "yo dawg");
+  }
+</script>
+<div>
+  <div class="messages">
 
-<head>
-    <link rel="stylesheet" type="text/css" href="/css/message-panel.css">
-</head>
-
-<body>
-  <p>test</p>
-</body>
-
-</html>
+  </div>
+</div>
