@@ -71,6 +71,7 @@
         .then(function (response) {
           return response.text();
         }).then(function (token) {
+          var running = true;
           var stream = WatsonSpeech.SpeechToText.recognizeMicrophone({
             token: JSON.parse(token).token,
             object_mode: true,
@@ -82,7 +83,9 @@
           stream.setEncoding('utf8'); // get text instead of Buffers for on data events
 
           stream.on('data', function (data) {
-            messagePanel.addMessage('Caller', data);
+            if(running){
+              messagePanel.addMessage('Caller', data);
+            }
           });
 
           stream.on('message', function (data) {
@@ -100,7 +103,9 @@
           stream2.setEncoding('utf8'); // get text instead of Buffers for on data events
 
           stream2.on('data', function (data) {
-            messagePanel.addMessage('Operator', data);
+            if(running){
+              messagePanel.addMessage('Operator', data);
+            }
           });
 
           stream2.on('message', function (data) {
@@ -108,6 +113,14 @@
 
           stream2.on('error', function (err) {
           });
+
+          document.querySelector('.hang-up-button').onclick = function(){
+            running = false;
+            stream.stop();
+            stream2.stop();
+            endCall();
+          }.bind(this);
+          
 
         }).catch(function (error) {
           console.log(error);
@@ -131,7 +144,7 @@
     }
 
     function endCall(){
-      console.log('end');
+      
       conn.disconnect();
       messagePanel.endCall();
     }
