@@ -1,5 +1,7 @@
 <script>
   let messagePanel;
+  let conn;
+
   window.onload = () => {
     messagePanel = new MessagePanel();
     
@@ -24,7 +26,6 @@
     });
 
 
-    let conn;
     Twilio.Device.connect(function (connection) {
       conn = connection;
     });
@@ -45,7 +46,6 @@
     });
 
     Twilio.Device.incoming(function (conn) {
-      alert('Incoming connection from ' + conn.parameters.From);
       // accept the incoming connection and start two-way audio
       conn.accept();
 
@@ -119,13 +119,20 @@
   function takeNextCall() {
       $.ajax('/connect/' + '<%- user.clientName %>')
         .done(function (text) {
-          console.log(text);
           if(text === 'Empty Queue') {
             alert('Queue is currently empty');
+            return;
           }
+          messagePanel.startCall();
         })
         .fail(function () {
           alert('Could not connect!');
         });
+    }
+
+    function endCall(){
+      console.log('end');
+      conn.disconnect();
+      messagePanel.endCall();
     }
 </script>
