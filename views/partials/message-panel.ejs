@@ -1,7 +1,6 @@
 <script src="/js/messages.js"></script>
 <script>
   window.onload = () => {
-    console.log("test");
     const messageList = new MessageList("messages");
     messageList.setCaller({
       name: "Caller"
@@ -9,12 +8,21 @@
     messageList.setOperator({
       name: "Operator"
     });
-    messageList.addMessage("caller", "Hey");
-    messageList.addMessage("operator", "yo dawg");
+
+    setInterval(() => {
+      messageList.addMessage("caller", "Hey");
+      setTimeout(() => {
+
+        messageList.addMessage("operator",
+          "yo Diggity dawg"
+        );
+      }, 1000)
+    }, 3000)
+
   }
 </script>
-<div>
-  <div class="messages">
-
+<div class="message-container">
+  <div class="message-sticker">
+    <div class="messages"></div>
   </div>
 </div>

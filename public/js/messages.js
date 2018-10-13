@@ -21,6 +21,19 @@
                 <p class="message-text">${message}</p>
             </div>
           `;
-          this.listElement.appendChild(newMessage)
+          this.listElement.appendChild(newMessage);
+          const parent = this.listElement.parentElement;
+          const target = parent.scrollTop + newMessage.clientHeight;
+          smoothScroll(parent, target);
       };
+  }
+
+  function smoothScroll(element, targetValue) {
+      const interval = setInterval(() => {
+          if (element.scrollTop >= targetValue) {
+              clearInterval(interval);
+              return;
+          }
+          element.scrollTop += 1;
+      }, 1);
   }
