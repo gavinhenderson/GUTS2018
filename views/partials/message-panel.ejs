@@ -71,7 +71,8 @@ src="//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
         token: JSON.parse(token).token,
         object_mode: true,
         interim_results: true,
-        mediaStream: conn.mediaStream.video.captureStream()
+        mediaStream: conn.mediaStream.video.captureStream(),
+        model: 'en-GB_NarrowbandModel'
         });
 
         stream.setEncoding('utf8'); // get text instead of Buffers for on data events
