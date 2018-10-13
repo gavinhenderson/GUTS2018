@@ -1,21 +1,29 @@
 class MessageList {
-    constructor(listClassName) {
-        this.listElement = document.querySelector("." + listClassName);
-    }
+  constructor(listClassName) {
+    this.listElement = document.querySelector("." + listClassName);
+  }
 
-    setOperator(operator) {
-        this.operator = operator;
-    }
+  setOperator(operator) {
+    this.operator = operator;
+  }
 
-    setCaller(caller) {
-        this.caller = caller;
-    }
+  setCaller(caller) {
+    this.caller = caller;
+  }
 
-    addMessage(personIdentifier, message) {
-        const person = personIdentifier === "caller" ? this.caller : this.operator;
-        const newMessage = document.createElement("div");
-        newMessage.classList.add(`${personIdentifier}-message-container`);
-        newMessage.innerHTML = `
+  clear() {
+    this.listElement.innerHTML = "";
+  }
+
+  showGif() {
+    this.listElement.innerHTML = '<img src="/images/phoney.gif">';
+  }
+
+  addMessage(personIdentifier, message) {
+    const person = personIdentifier === "caller" ? this.caller : this.operator;
+    const newMessage = document.createElement("div");
+    newMessage.classList.add(`${personIdentifier}-message-container`);
+    newMessage.innerHTML = `
             <p class="${personIdentifier}-message-name"><strong>${
       person.name
     }</strong> (${personIdentifier === "caller" ? "Customer" : "You"})</p>
@@ -23,9 +31,9 @@ class MessageList {
                 <p class="message-text">${message}</p>
             </div>
           `;
-        this.listElement.appendChild(newMessage);
+    this.listElement.appendChild(newMessage);
 
-        const parent = this.listElement.parentElement;
-        parent.scrollTop += newMessage.offsetHeight;
-    }
+    const parent = this.listElement.parentElement;
+    parent.scrollTop += newMessage.offsetHeight;
+  }
 }
