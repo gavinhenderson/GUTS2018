@@ -136,21 +136,20 @@ li{
 	margin-right: 10px;
 	vertical-align: middle;
 	height: 30px;
-	width: 30px;
+  width: 30px;
 }
 
-#opText{
-	margin-left: 10px;
-	display: inline-block;
-}
-
-ul{
-	margin: 0px;
-	padding: 0px;
-	text-align: left;
+#opText {
+  margin-left: 10px;
+  display: inline-block;
 }
 
 h3{
-	text-align: center;
+  text-align: center;
 }
 
+ul {
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+}
