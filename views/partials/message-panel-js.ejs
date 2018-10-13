@@ -114,12 +114,15 @@
           stream2.on('error', function (err) {
           });
 
-          document.querySelector('.hang-up-button').onclick = function(){
+
+          var ondisconnect = () => {
             running = false;
             stream.stop();
             stream2.stop();
             endCall();
-          }.bind(this);
+          };
+          conn.on('disconnect', ondisconnect)
+          document.querySelector('.hang-up-button').onclick = ondisconnect;
           
 
         }).catch(function (error) {
