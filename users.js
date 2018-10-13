@@ -29,6 +29,13 @@ const users = [
     clientName: "DeanBeggs",
     admin: false,
   },
+  {
+    name: "Conor Haining",
+    number: "07412939773",
+    title: "The Big Man",
+    clientName: "ConorHaining",
+    admin: false,
+  },
 ];
 
 users.forEach((user) => {
