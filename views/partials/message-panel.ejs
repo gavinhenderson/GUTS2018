@@ -4,7 +4,7 @@
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-<script src="./watson-speech.min.js"></script>
+<script src="./js/watson-speech.min.js"></script>
 <title>Document</title><script type="text/javascript"
 src="//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
 <script>
@@ -71,7 +71,8 @@ src="//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
         token: JSON.parse(token).token,
         object_mode: true,
         interim_results: true,
-        mediaStream: conn.mediaStream.video.captureStream()
+        mediaStream: conn.mediaStream.video.captureStream(),
+        model: 'en-GB_NarrowbandModel'
         });
 
         stream.setEncoding('utf8'); // get text instead of Buffers for on data events
