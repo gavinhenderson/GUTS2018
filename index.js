@@ -7,7 +7,9 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const routes = require("./app/routes.js");
-const secret = require("./users.js");
+const USERS = require("./users.js");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
 
 // Config
 const port = process.env.PORT || 8080;
@@ -18,13 +20,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // passport
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
-
 passport.use(
-  new LocalStrategy(function(username, password, done) {
-    if (username === "admin" && password === "admin") {
-      done(null, { user: username });
+  new LocalStrategy((username, password, done) => {
+    const user = USERS.find((currentUser) => currentUser.number === username);
+
+    if (user) {
+      done(null, user);
     } else {
       done(null, false);
     }
@@ -43,7 +44,7 @@ app.use(session({ secret: "conorhatestrains" }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-routes(app);
+routes(app, passport);
 
 io.on("connection", (socket) => {
   console.log("Socket connected: " + socket.id);
