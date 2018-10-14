@@ -25,7 +25,6 @@ module.exports = function(string) {
                     "sentiment": true,
                     "limit": 5
                 },
-                "categories": {},
                 "sentiment": {}
             }
         },
