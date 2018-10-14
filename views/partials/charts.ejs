@@ -7,7 +7,6 @@
   <link rel="stylesheet" type="text/css" href="/css/charts.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-  <!-- Fake data using CanvasJS -->
 
   <script src="/js/charts.js"></script>
 
@@ -38,6 +37,26 @@
           <h4>Entities</h4>
           <p><canvas id="keywords" width="300" height="300"></canvas></p>
         </div>
+
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front">
+              <div class="dataCards">
+                <h4>Call Sentiment</h4>
+                <div id="chartContainer" style="height: 234px; width: 420px; max-width: 100%;"></div>
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+              </div>
+            </div>
+            <div class="back">
+              <div class="dataCards">
+                <h4>Call Sentiment</h4>
+                <div style="height: 300px; width: 100%;">Call sentiment is a measure of how positively or negatively users react to the operator. High call sentiment may indicate high satisfaction with the service.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="dataCards queueStats">
           <h1>Queue Statistics</h1>
           <div class="item">
@@ -52,27 +71,9 @@
 
         </div>
 
-        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-          <div class="flipper">
-            <div class="front">
-              <div class="dataCards">
-                <h4>Call Sentiment</h4>
-                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-              </div>
-            </div>
-            <div class="back">
-              <div class="dataCards">
-                <h4>Call Sentiment</h4>
-                <div style="height: 300px; width: 100%;">this is static data</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
 
       </div>
 
     </div>
-  </div>-->
+  </div>
 </body>

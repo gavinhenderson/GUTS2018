@@ -7,12 +7,14 @@
   margin: 10px;
   margin-top: 10px;
   text-align: center;
-  width: 300px;
+  max-height: 350px;
+  height: 350px;
+  overflow: hidden;
 }
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
 

@@ -10,21 +10,28 @@ function addMiner(miner) {
     miners.push(miner);
 }
 
+
+var nlp = require('./nlp');
+addMiner(nlp);
+
 /**
  * Mines data from a string
  */
-function mineData(data) {
-    miners.forEach(miner => {
-        eval(miner);
-        miner(data);
-    });
+function mineData(data, cb) {
+    // var responseData = {};
+    // miners.forEach(miner => {
+    //     eval(miner);
+    //     miner(data, (minedData) => {
+            
+    //     });
+    // });
+    // // ^ because of hackathon hax, i'm just gonna bodge this:
+    nlp(data, cb);
     DataStore.incrementNumMessages();
 }
 
 function getMiners() { return miners };
 
-var nlp = require('./nlp');
-addMiner(nlp);
 
 module.exports = {
     addMiner, mineData, getMiners

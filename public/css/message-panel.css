@@ -42,6 +42,14 @@
 .message-text {
   padding: 15px;
   margin: 0;
+  line-height: 25px;
+}
+
+.message-highlight {
+  background-color: #FFEB3B;
+  color: #616060;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .message-sticker {
@@ -49,6 +57,8 @@
   overflow-y: auto;
   width: 100%;
   padding: 0 30px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .message {
