@@ -13,6 +13,7 @@ const watsonTokenManager = new watson.AuthorizationV1(
 );
 
 const DataMiner = require('./miners');
+const DataStore = require('./data');
   
 const accountSid = "ACad0e3dada136e6d4e80b6311ef74903e";
 const authToken = "1be34ed20265a15d8a05224c2273a384";
@@ -42,7 +43,7 @@ module.exports = (app, passport) => {
 
   app.get('/data', (req, res, next) => {
     res.json({
-      sentiment: [],
+      sentiment: DataStore.getSentiment(),
       entities: [],
       emotion: [],
       categories: []

@@ -7,6 +7,8 @@ var nlu = new NaturalLanguageUnderstandingV1({
   url: 'https://gateway.watsonplatform.net/natural-language-understanding/api/'
 });
 
+const DataStore = require('../data');
+
 module.exports = function(string) {
 
     // Mine string
@@ -23,13 +25,16 @@ module.exports = function(string) {
                     "sentiment": true,
                     "limit": 5
                 },
-                "categories": {}
+                "categories": {},
+                "sentiment": {}
             }
         },
         function(err, response) {
             if (err) console.log(err);
             else {
                 console.log(JSON.stringify(response, null, 2));
+
+                DataStore.setSentiment({ sentimentScore: response.sentiment.document.score, timestamp: + new Date() })
             }
         }
     );
