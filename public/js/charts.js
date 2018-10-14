@@ -1,3 +1,15 @@
+setInterval(function(){
+     
+  fetch('/queue')
+    .then((queue) => {
+      return queue.json();
+    }).then((queue) => {
+      document.querySelector('.queueSize').innerHTML = queue.currentSize;
+      document.querySelector('.waitTime').innerHTML = queue.averageWaitTime;
+    });
+
+ }, 500);
+
 window.onload = function() {
   $.get("/data", (data) => {
     const lineChartData = data.sentiment.map((current) => {
