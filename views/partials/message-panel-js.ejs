@@ -103,6 +103,12 @@
                   'Accept': 'application/json',
                   'Content-Type': 'application/json'
                 },
+              })
+              .then(function(response) {
+                // response is an array;
+                response.forEach(entity => {
+                  highlight(entity);
+                });
               });
             }
           });
@@ -137,6 +143,22 @@
         });
     }
 
+  }
+
+  function highlight(word) {
+    let html = '<span class="message-highlight">' + word + '</span>';
+    document.querySelectorAll('.message-text').forEach(el => {
+      if (el.innerHTML.indexOf(word) != -1) {
+        let splits = el.innerHTML.split(word);
+        let newHtml = '';
+        for (var i = 0; i < splits.length; i++) {
+          newHtml += splits[i];
+          if (i != splits.length-1) newHtml += html;
+        }
+
+        el.innerHTML = newHtml;
+      }
+    });
   }
 
   function takeNextCall() {
