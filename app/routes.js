@@ -38,7 +38,8 @@ module.exports = (app, passport) => {
 
   app.post('/registerNewMessage', (req, res, next) => {
     const message = req.body.message;
-    DataStore.mineData(message);
+    DataMiner.mineData(message);
+    res.json({status: 200});
   });
 
   app.get('/data', (req, res, next) => {
