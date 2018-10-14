@@ -207,4 +207,16 @@ module.exports = (app, passport) => {
      .done();
 
   });
+
+  app.get('/calls', (req, res) => {
+
+    let callList = []
+
+    client.calls.list()
+      .then((calls) => {
+        res.send(calls);
+      });
+
+  });
+
 };
