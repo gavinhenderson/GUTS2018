@@ -41,7 +41,7 @@ module.exports = (app, passport) => {
   });
 
   app.get('/data', (req, res, next) => {
-    req.json({
+    res.json({
       sentiment: [],
       entities: [],
       emotion: [],
