@@ -130,14 +130,16 @@ window.onload = function() {
         ],
       },
       options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
+        legend: {
+          position: "top",
+        },
+        title: {
+          display: false,
+        },
+        scale: {
+          ticks: {
+            beginAtZero: true,
+          },
         },
       },
     });
