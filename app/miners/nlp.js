@@ -39,8 +39,12 @@ module.exports = function(string, cb) {
                 var entities = [];
                 response.entities.forEach(entity => {
                     DataStore.addEntity(entity.text);
+                });
+                
+                response.keywords.forEach(entity => {
                     entities.push(entity.text);
                 });
+
 
                 cb(entities);
             }
