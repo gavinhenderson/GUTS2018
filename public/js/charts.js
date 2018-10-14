@@ -1,3 +1,15 @@
+setInterval(function(){
+     
+  fetch('/queue')
+    .then((queue) => {
+      return queue.json();
+    }).then((queue) => {
+      document.querySelector('.queueSize').innerHTML = queue.currentSize;
+      document.querySelector('.waitTime').innerHTML = queue.averageWaitTime;
+    });
+
+ }, 500);
+
 window.onload = function() {
   var ctx = document.getElementById("myChart").getContext("2d");
   var myChart = new Chart(ctx, {
