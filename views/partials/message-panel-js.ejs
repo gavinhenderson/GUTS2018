@@ -105,8 +105,9 @@
                 },
               })
               .then(function(response) {
-                // response is an array;
-                response.forEach(entity => {
+                return response.json()
+              }).then(function(entities) {
+                entities.forEach(entity => {
                   highlight(entity);
                 });
               });
