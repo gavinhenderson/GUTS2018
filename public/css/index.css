@@ -7,4 +7,6 @@ body {
 .page-container {
   display: flex;
   flex-direction: row;
+  max-height: 100%;
+  overflow-y: scroll;
 }

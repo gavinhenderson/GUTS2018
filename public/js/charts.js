@@ -46,6 +46,7 @@ window.onload = function() {
           },
         ],
       },
+      maintainAspectRatio: false,
       options: {
         scales: {
           yAxes: [
@@ -103,6 +104,7 @@ window.onload = function() {
     var ctx2 = document.getElementById("emotionsChart").getContext("2d");
     var polarChart = new Chart(ctx2, {
       type: "radar",
+      maintainAspectRatio: false,
       data: {
         labels: chartLabels,
         datasets: [
