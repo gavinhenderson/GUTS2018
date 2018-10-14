@@ -44,7 +44,7 @@ module.exports = (app, passport) => {
   app.get('/data', (req, res, next) => {
     res.json({
       sentiment: DataStore.getSentiment(),
-      entities: [],
+      entities: DataStore.getEntities(),
       emotion: DataStore.getAllEmotion(),
       categories: []
     });
