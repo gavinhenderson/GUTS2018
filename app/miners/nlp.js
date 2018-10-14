@@ -35,6 +35,7 @@ module.exports = function(string) {
                 console.log(JSON.stringify(response, null, 2));
 
                 DataStore.setSentiment({ sentimentScore: response.sentiment.document.score, timestamp: + new Date() })
+                DataStore.setEmotion(response.emotion.document.emotion);
             }
         }
     );
