@@ -2,6 +2,17 @@
   let messagePanel;
   let conn;
 
+   setInterval(function(){
+     
+    $.ajax('/queue/')
+      .done(function (data) {
+        document.querySelector('.queueSize').innerHTML = data.currentSize;
+        document.querySelector('.waitTime').innerHTML = data.averageWaitTime;
+
+      });
+
+   }, 500);
+
   window.onload = () => {
     messagePanel = new MessagePanel();
     
