@@ -63,12 +63,24 @@
   width: 100%;
 }
 
+.queue {
+  padding: 8px;
+  background-color: gray;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
 .timer {
   padding: 8px;
   background-color: #7db93a;
   color: white;
   font-size: 18px;
   text-align: center;
+}
+
+.timer-disabled {
+  background-color: gray;
 }
 
 .message-panel {
@@ -88,6 +100,11 @@
   border-radius: 0;
 }
 
+.take-next-call-button {
+  background-color: #1a73e8;
+  color: white;
+}
+
 .hang-up-button {
   background-color: #e84118;
   color: white;
@@ -103,4 +120,15 @@
 
 .hold-button:hover {
   box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4);
+}
+
+.gif {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -150px;
+}
+
+.hide-button {
+  display: none;
 }
