@@ -36,6 +36,9 @@ module.exports = function(string) {
 
                 DataStore.setSentiment({ sentimentScore: response.sentiment.document.score, timestamp: + new Date() })
                 DataStore.setEmotion(response.emotion.document.emotion);
+                response.entities.forEach(entity => {
+                    DataStore.addEntity(entity.text);
+                });
             }
         }
     );
