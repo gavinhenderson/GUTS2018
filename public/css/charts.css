@@ -92,3 +92,12 @@ a:hover {
 .back {
   transform: rotateY(180deg);
 }
+
+.queueStats strong{
+  display: block;
+  width: 100%;
+  font-size: 1.5em;
+}
+.queueStats .item{
+  margin: 20px 0;
+}
