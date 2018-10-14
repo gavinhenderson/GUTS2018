@@ -9,7 +9,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <!-- Fake data using CanvasJS -->
 
-  <!-- Call Sentiment -->
   <script>
     window.onload = function () {
 
@@ -144,11 +143,7 @@
     }
   </script>
 
-  <!-- =========== Concurrent Calls ======================================================== -->
-
-
-  <!-- ============ Call Duration ===================================================== -->
-
+  <!--  -->
 
 </head>
 
@@ -169,11 +164,26 @@
           <h4>Call Duration</h4>
           <p><canvas id="myChart" width="400" height="400"></canvas></p>
         </div>
-        <div class="dataCards">
-          <h4>Call Sentiment</h4>
-          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front">
+              <div class="dataCards">
+                <h4>Call Sentiment</h4>
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+              </div>
+            </div>
+            <div class="back">
+              <div class="dataCards">
+                <h4>Call Sentiment</h4>
+                <div style="height: 300px; width: 100%;">this is static data</div>
+              </div>
+            </div>
+          </div>
         </div>
+
+
       </div>
 
     </div>
