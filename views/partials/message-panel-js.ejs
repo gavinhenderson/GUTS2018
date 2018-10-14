@@ -98,7 +98,11 @@
               messagePanel.addMessage('caller', data);
               fetch('/registerNewMessage', {
                 method: 'POST',
-                body: JSON.stringify({ message: data })
+                body: JSON.stringify({ message: data }),
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
               });
             }
           });
