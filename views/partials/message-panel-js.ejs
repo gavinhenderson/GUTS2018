@@ -96,13 +96,15 @@
           stream.on('data', function (data) {
             if(running){
               messagePanel.addMessage('caller', data);
+              fetch('/registerNewMessage', {
+                method: 'POST',
+                body: JSON.stringify({ message: data }),
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+              });
             }
-          });
-
-          stream.on('message', function (data) {
-          });
-
-          stream.on('error', function (err) {
           });
 
           var stream2 = WatsonSpeech.SpeechToText.recognizeMicrophone({
@@ -117,12 +119,6 @@
             if(running){
               messagePanel.addMessage('operator', data);
             }
-          });
-
-          stream2.on('message', function (data) {
-          });
-
-          stream2.on('error', function (err) {
           });
 
 
