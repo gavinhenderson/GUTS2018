@@ -11,6 +11,39 @@ setInterval(function(){
  }, 500);
 
 window.onload = function() {
+  $.get("/data", (data) => {
+    const lineChartData = data.sentiment.map((current) => {
+      return {
+        y: current.sentimentScore,
+        x: new Date(current.timestamp * 1000),
+      };
+    });
+
+    console.log(lineChartData);
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true,
+      theme: "light2",
+      title: {
+        text: "",
+      },
+      axisX: {
+        title: "Seconds",
+      },
+      axisY: {
+        title: "Sentiment",
+        includeZero: true,
+      },
+      data: [
+        {
+          type: "line",
+          dataPoints: lineChartData,
+        },
+      ],
+    });
+    chart.render();
+  });
+
   var ctx = document.getElementById("myChart").getContext("2d");
   var myChart = new Chart(ctx, {
     type: "bubble",
@@ -125,66 +158,4 @@ window.onload = function() {
       },
     },
   });
-
-  var chart = new CanvasJS.Chart("chartContainer", {
-    animationEnabled: true,
-    theme: "light2",
-    title: {
-      text: "Simple Line Chart",
-    },
-    axisX: {
-      title: "Seconds",
-    },
-    axisY: {
-      title: "Sentiment",
-      includeZero: true,
-    },
-    data: [
-      {
-        type: "line",
-        dataPoints: [
-          {
-            y: 45.0,
-          },
-          {
-            y: 41.4,
-          },
-          {
-            y: 90.0,
-            indexLabel: "highest",
-            markerColor: "red",
-            markerType: "triangle",
-          },
-          {
-            y: 46.0,
-          },
-          {
-            y: 45.0,
-          },
-          {
-            y: 50.0,
-          },
-          {
-            y: 48.0,
-          },
-          {
-            y: 48.0,
-          },
-          {
-            y: 16.0,
-            indexLabel: "lowest",
-            markerColor: "DarkSlateGrey",
-            markerType: "cross",
-          },
-          {
-            y: 50.0,
-          },
-          {
-            y: 48.0,
-          },
-        ],
-      },
-    ],
-  });
-  chart.render();
 };
