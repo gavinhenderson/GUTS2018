@@ -9,7 +9,7 @@ var nlu = new NaturalLanguageUnderstandingV1({
 
 const DataStore = require('../data');
 
-module.exports = function(string) {
+module.exports = function(string, cb) {
 
     // Mine string
     nlu.analyze(
@@ -35,9 +35,14 @@ module.exports = function(string) {
 
                 DataStore.setSentiment({ sentimentScore: response.sentiment.document.score, timestamp: + new Date() })
                 DataStore.setEmotion(response.emotion.document.emotion);
+                
+                var entities = [];
                 response.entities.forEach(entity => {
                     DataStore.addEntity(entity.text);
+                    entities.push(entity.text);
                 });
+
+                cb(entities);
             }
         }
     );
