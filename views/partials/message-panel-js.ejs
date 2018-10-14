@@ -1,10 +1,25 @@
 <script>
+  let messagePanel;
+  let conn;
+
+   setInterval(function(){
+     
+    $.ajax('/queue/')
+      .done(function (data) {
+        document.querySelector('.queueSize').innerHTML = data.currentSize;
+        document.querySelector('.waitTime').innerHTML = data.averageWaitTime;
+
+      });
+
+   }, 500);
+
   window.onload = () => {
-    const messageList = new MessageList("messages");
-    messageList.setCaller({
+    messagePanel = new MessagePanel();
+    
+    messagePanel.setCaller({
       name: "Caller"
     });
-    messageList.setOperator({
+    messagePanel.setOperator({
       name: "Operator"
     });
 
@@ -22,7 +37,6 @@
     });
 
 
-    let conn;
     Twilio.Device.connect(function (connection) {
       conn = connection;
     });
@@ -43,7 +57,6 @@
     });
 
     Twilio.Device.incoming(function (conn) {
-      alert('Incoming connection from ' + conn.parameters.From);
       // accept the incoming connection and start two-way audio
       conn.accept();
 
@@ -69,6 +82,7 @@
         .then(function (response) {
           return response.text();
         }).then(function (token) {
+          var running = true;
           var stream = WatsonSpeech.SpeechToText.recognizeMicrophone({
             token: JSON.parse(token).token,
             object_mode: true,
@@ -80,7 +94,9 @@
           stream.setEncoding('utf8'); // get text instead of Buffers for on data events
 
           stream.on('data', function (data) {
-            messageList.addMessage('Caller', data);
+            if(running){
+              messagePanel.addMessage('caller', data);
+            }
           });
 
           stream.on('message', function (data) {
@@ -98,7 +114,9 @@
           stream2.setEncoding('utf8'); // get text instead of Buffers for on data events
 
           stream2.on('data', function (data) {
-            messageList.addMessage('Operator', data);
+            if(running){
+              messagePanel.addMessage('operator', data);
+            }
           });
 
           stream2.on('message', function (data) {
@@ -106,6 +124,17 @@
 
           stream2.on('error', function (err) {
           });
+
+
+          var ondisconnect = () => {
+            running = false;
+            stream.stop();
+            stream2.stop();
+            endCall();
+          };
+          conn.on('disconnect', ondisconnect)
+          document.querySelector('.hang-up-button').onclick = ondisconnect;
+          
 
         }).catch(function (error) {
           console.log(error);
@@ -117,13 +146,20 @@
   function takeNextCall() {
       $.ajax('/connect/' + '<%- user.clientName %>')
         .done(function (text) {
-          console.log(text);
           if(text === 'Empty Queue') {
             alert('Queue is currently empty');
+            return;
           }
+          messagePanel.startCall();
         })
         .fail(function () {
           alert('Could not connect!');
         });
+    }
+
+    function endCall(){
+      
+      conn.disconnect();
+      messagePanel.endCall();
     }
 </script>

@@ -13,9 +13,12 @@ const watsonTokenManager = new watson.AuthorizationV1(
 );
 
 const DataMiner = require('./miners');
-
+  
 const accountSid = "ACad0e3dada136e6d4e80b6311ef74903e";
 const authToken = "1be34ed20265a15d8a05224c2273a384";
+  
+  var twilio = require('twilio');
+  var client = twilio(accountSid, authToken);
 
 module.exports = (app, passport) => {
   app.get("/", (req, res) => {
@@ -182,8 +185,6 @@ module.exports = (app, passport) => {
 
   app.get('/connect/:operator', (req, res) => {
     
-    var twilio = require('twilio');
-    var client = twilio(accountSid, authToken);
 
     client.queues('QUa43f0558674af49083e1afeb88a6efa1')
      .fetch()
@@ -204,6 +205,19 @@ module.exports = (app, passport) => {
       } else {
         res.send('Empty Queue');
       }
+
+     })
+     .done();
+
+  });
+
+  app.get('/queue', (req, res) => {
+
+    client.queues('QUa43f0558674af49083e1afeb88a6efa1')
+     .fetch()
+     .then(queue => {
+       
+      res.send(queue);
 
      })
      .done();
