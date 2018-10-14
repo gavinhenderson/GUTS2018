@@ -1,14 +1,13 @@
-setInterval(function(){
-     
-  fetch('/queue')
+setInterval(function() {
+  fetch("/queue")
     .then((queue) => {
       return queue.json();
-    }).then((queue) => {
-      document.querySelector('.queueSize').innerHTML = queue.currentSize;
-      document.querySelector('.waitTime').innerHTML = queue.averageWaitTime;
+    })
+    .then((queue) => {
+      document.querySelector(".queueSize").innerHTML = queue.currentSize;
+      document.querySelector(".waitTime").innerHTML = queue.averageWaitTime;
     });
-
- }, 500);
+}, 500);
 
 window.onload = function() {
   $.get("/data", (data) => {
@@ -60,7 +59,7 @@ window.onload = function() {
         labels: chartLabels,
         datasets: [
           {
-            label: "Number of calls (minutes, customers, frequency)",
+            label: "Average emotion of callers",
             data: chartData,
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
