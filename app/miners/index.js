@@ -1,3 +1,5 @@
+const DataStore = require('../data');
+
 miners = [];
 
 /**
@@ -16,6 +18,7 @@ function mineData(data) {
         eval(miner);
         miner(data);
     });
+    DataStore.incrementNumMessages();
 }
 
 function getMiners() { return miners };
