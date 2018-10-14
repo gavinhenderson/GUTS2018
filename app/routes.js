@@ -4,13 +4,15 @@ const VoiceResponse = require("twilio").twiml.VoiceResponse;
 const watson = require("watson-developer-cloud");
 const watsonServiceUrl = "https://stream.watsonplatform.net/speech-to-text/api";
 const watsonSpeech = new watson.SpeechToTextV1({
-  username: "f182886f-e467-498c-92e2-794df620d6bc",
-  password: "2KKVwBs8KJLq",
+  username: "5cf37ec5-bd36-48fb-982d-8852360c7cca",
+  password: "hTx1BY1NbVGK",
   url: watsonServiceUrl,
 });
 const watsonTokenManager = new watson.AuthorizationV1(
   watsonSpeech.getCredentials(),
 );
+
+const DataMiner = require('./miners');
 
 const accountSid = "ACad0e3dada136e6d4e80b6311ef74903e";
 const authToken = "1be34ed20265a15d8a05224c2273a384";
@@ -28,6 +30,20 @@ module.exports = (app, passport) => {
     }
 
     res.render("home", { world: "world", user: req.user });
+  });
+
+  app.post('/registerNewMessage', (req, res, next) => {
+    const message = req.body.message;
+    DataStore.mineData(message);
+  });
+
+  app.get('/data', (req, res, next) => {
+    req.json({
+      sentiment: [],
+      entities: [],
+      emotion: [],
+      categories: []
+    });
   });
 
   app.get("/admin", (req, res) => {
