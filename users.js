@@ -2,7 +2,7 @@ const uuidv4 = require("uuid/v4");
 
 const users = [
   {
-    number: "07597347312",
+    number: "1",
     name: "Mitchell McJannett",
     title: "Forward Operator",
     clientName: "MitchellMcJannett",
@@ -10,28 +10,28 @@ const users = [
   },
   {
     name: "Gavin Henderson",
-    number: "07414525394",
+    number: "2",
     title: "Backward Operator",
     clientName: "GavinHenderson",
     admin: true,
   },
   {
     name: "Jay Bennett",
-    number: "07754611783",
+    number: "3",
     title: "Head Operator",
     clientName: "JayBennett",
     admin: false,
   },
   {
     name: "Dean Beggs",
-    number: "07495462969",
+    number: "4",
     title: "The Operator",
     clientName: "DeanBeggs",
     admin: false,
   },
   {
     name: "Conor Haining",
-    number: "07412939773",
+    number: "5",
     title: "The Big Man",
     clientName: "ConorHaining",
     admin: false,
