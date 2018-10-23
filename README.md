@@ -1,4 +1,4 @@
-<p align="center"><img src="http://guts-2018.herokuapp.com/images/phoney-small.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/gavinhenderson/GUTS2018/master/public/images/phoney-small.png"></p>
 
 > Phoney is a ground breaking technology that has the possibility to shape the future. Phoney is unapologetically simple - Steve Jobs 2018
 
